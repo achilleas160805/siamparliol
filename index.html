@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σιαμπαρλή Ολυμπία — Παιδίατρος Θέρμη</title>
+    <meta name="description" content="Παιδιατρικό Ιατρείο Ολυμπίας Σιαμπαρλή στη Θέρμη Θεσσαλονίκης. Εξειδικευμένη παιδιατρική φροντίδα, εμβολιασμοί, παρακολούθηση ανάπτυξης & 24/7 υποστήριξη.">
+    
+    <!-- Google Fonts: Cormorant Garamond (Luxury Serif) & Plus Jakarta Sans (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF8F5',
+                        sand: '#F4EFEA',
+                        evergreen: {
+                            800: '#1F332B',
+                            900: '#121C17',
+                        },
+                        gold: {
+                            500: '#B69359',
+                            600: '#9A7B43',
+                        },
+                        slateDark: '#182620',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Fine Hairline Grid & Base Styles */
+        body {
+            background-color: #FAF8F5;
+            color: #182620;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hairline-border {
+            border-color: rgba(24, 38, 32, 0.12);
+        }
+
+        .hairline-border-light {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Hero Background Overlay with Image */
+        .hero-bg-section {
+            background-image: linear-gradient(to bottom, rgba(18, 28, 23, 0.85), rgba(18, 28, 23, 0.88)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* Subtle Transitions */
+        .tab-btn.active {
+            border-bottom: 2px solid #B69359;
+            color: #121C17;
+            font-weight: 600;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B69359;
+        }
+    </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-white">
+
+    <!-- Top Emergency Ribbon -->
+    <div class="bg-evergreen-900 text-cream text-xs py-2 px-4 border-b hairline-border-light">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Παιδιατρική Υποστήριξη & Επείγοντα Περιστατικά</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <span>📍 Βασιλικής Ταβάκη 15, Θέρμη</span>
+                <a href="tel:6948172766" class="text-gold-500 font-semibold hover:underline">📞 694 817 2766</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            
+            <!-- Logo with Stethoscope Emblem -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 border border-gold-500/40 flex items-center justify-center bg-sand text-gold-500 transition-colors group-hover:bg-gold-500 group-hover:text-white">
+                    <!-- Stethoscope Icon -->
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4.8 2.4A2.4 2.4 0 0 0 2.4 4.8v4.8a7.2 7.2 0 0 0 14.4 0V4.8a2.4 2.4 0 0 0-2.4-2.4"/>
+                        <path d="M9.6 16.8v1.2a3.6 3.6 0 0 0 7.2 0v-2.4"/>
+                        <circle cx="16.8" cy="13.2" r="2.4"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-serif text-xl tracking-wider uppercase block text-evergreen-900 font-bold leading-none">Δρ. Ολυμπια Σιαμπαρλη</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-600 uppercase font-medium">Παιδιατρος — Θερμη</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-medium text-slateDark">
+                <a href="#about" class="hover:text-gold-600 transition-colors">Φιλοσοφια</a>
+                <a href="#services" class="hover:text-gold-600 transition-colors">Υπηρεσιες</a>
+                <a href="#milestones" class="hover:text-gold-600 transition-colors">Οδηγος Αναπτυξης</a>
+                <a href="#reviews" class="hover:text-gold-600 transition-colors">Αξιολογησεις</a>
+                <a href="#contact" class="hover:text-gold-600 transition-colors">Επικοινωνια</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 border border-evergreen-900 bg-evergreen-900 text-cream px-5 py-2.5 text-xs tracking-wider uppercase hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
+                <span>Ραντεβου</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg-section relative text-cream py-24 lg:py-36 border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Google Badge Proof -->
+                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 border hairline-border-light text-xs tracking-wider">
+                    <div class="flex text-amber-400 text-sm">★★★★★</div>
+                    <span class="font-semibold text-white">5.0 / 5.0</span>
+                    <span class="text-white/60">|</span>
+                    <span class="text-white/80">111 Επαληθευμένες Αξιολογήσεις Google</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-tight">
+                    Επιστημονική αφοσίωση, <br>
+                    <span class="italic font-normal text-gold-500">ανθρώπινη ηρεμία</span> &amp; φροντίδα.
+                </h1>
+
+                <p class="text-white/80 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                    Ένα σύγχρονο παιδιατρικό ιατρείο στη Θέρμη σχεδιασμένο για να προσφέρει υπεύθυνη επιστημονική παρακολούθηση, ασφάλεια και απόλυτη υποστήριξη στους γονείς σε κάθε στάδιο ανάπτυξης του παιδιού.
+                </p>
+
+                <div class="pt-4 flex flex-wrap gap-4 items-center">
+                    <button onclick="openModal()" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
+                        Προγραμματισμος Επισκεψης
+                    </button>
+                    <a href="tel:6948172766" class="border border-white/30 hover:border-white text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
+                        📞 694 817 2766
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Specs Card -->
+            <div class="lg:col-span-4 bg-white/10 backdrop-blur-md border hairline-border-light p-8 space-y-6">
+                <h3 class="font-serif text-2xl text-white font-light border-b hairline-border-light pb-4">Παιδιατρικό Ιατρείο</h3>
+                
+                <div class="space-y-4 text-sm text-white/90">
+                    <div class="flex items-start gap-3">
+                        <span class="text-gold-500 font-bold">📍</span>
+                        <div>
+                            <p class="font-medium">Διεύθυνση</p>
+                            <p class="text-xs text-white/70">Βασιλικής Ταβάκη 15, Θέρμη 570 01</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-gold-500 font-bold">⏰</span>
+                        <div>
+                            <p class="font-medium">Ωράριο Λειτουργίας</p>
+                            <p class="text-xs text-white/70">Κατόπιν Ραντεβού (24/7 Επείγοντα)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-gold-500 font-bold">👶</span>
+                        <div>
+                            <p class="font-medium">Εξειδίκευση</p>
+                            <p class="text-xs text-white/70">Νεογνά, Βρέφη, Παιδιά &amp; Έφηβοι</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Philosophy & About Section -->
+    <section id="about" class="py-24 bg-cream border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold">Η Ιατρικη Φιλοσοφια</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-evergreen-900 leading-tight">
+                        Χρόνος, ακρόαση και επιστημονική συνέπεια σε κάθε εξέταση.
+                    </h2>
+                    <p class="text-sm text-slateDark/80 leading-relaxed">
+                        Η παιδιατρική δεν είναι απλώς η διάγνωση μιας ασθένειας. Είναι η δημιουργία μιας σχέσης εμπιστοσύνης με το παιδί και την οικογένεια. 
+                    </p>
+                    <p class="text-sm text-slateDark/80 leading-relaxed">
+                        Στο ιατρείο μας στη Θέρμη, αφιερώνουμε τον απαραίτητο χρόνο ώστε κάθε παιδί να αισθάνεται ήρεμο και ασφαλές, ενώ οι γονείς λαμβάνουν σαφείς, τεκμηριωμένες απαντήσεις για κάθε τους απορία.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 gap-6 border-t hairline-border">
+                        <div>
+                            <span class="font-serif text-3xl text-gold-600 block">100%</span>
+                            <span class="text-xs text-slateDark/70 uppercase tracking-wider">Προσωποποιημενη Φροντιδα</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl text-gold-600 block">24/7</span>
+                            <span class="text-xs text-slateDark/70 uppercase tracking-wider">Τηλεφωνικη Υποστηριξη</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid -->
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    <div class="p-8 bg-sand border hairline-border space-y-3">
+                        <span class="text-gold-600 text-lg font-serif">01.</span>
+                        <h3 class="font-serif text-xl text-evergreen-900">Έμπειρη &amp; Ήρεμη Προσέγγιση</h3>
+                        <p class="text-xs text-slateDark/70 leading-relaxed">
+                            Εξέταση χωρίς βιασύνη, προσαρμοσμένη στον ρυθμό και την ψυχολογία του κάθε παιδιού.
+                        </p>
+                    </div>
+
+                    <div class="p-8 bg-sand border hairline-border space-y-3">
+                        <span class="text-gold-600 text-lg font-serif">02.</span>
+                        <h3 class="font-serif text-xl text-evergreen-900">Νεογνική Φροντίδα</h3>
+                        <p class="text-xs text-slateDark/70 leading-relaxed">
+                            Πρώτη επίσκεψη από τις πρώτες ημέρες ζωής, υποστήριξη θηλασμού και καθοδήγηση νέων γονέων.
+                        </p>
+                    </div>
+
+                    <div class="p-8 bg-sand border hairline-border space-y-3">
+                        <span class="text-gold-600 text-lg font-serif">03.</span>
+                        <h3 class="font-serif text-xl text-evergreen-900">Σύγχρονο Εμβολιαστικό Πλάνο</h3>
+                        <p class="text-xs text-slateDark/70 leading-relaxed">
+                            Πλήρης εφαρμογή του Εθνικού Προγράμματος Εμβολιασμών με εξατομικευμένη παρακολούθηση.
+                        </p>
+                    </div>
+
+                    <div class="p-8 bg-sand border hairline-border space-y-3">
+                        <span class="text-gold-600 text-lg font-serif">04.</span>
+                        <h3 class="font-serif text-xl text-evergreen-900">Άμεση Ανταπόκριση</h3>
+                        <p class="text-xs text-slateDark/70 leading-relaxed">
+                            Συνεχής επικοινωνία με τη γιατρό για έκτακτα συμπτώματα και απορίες.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Catalog -->
+    <section id="services" class="py-24 bg-sand border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="max-w-2xl mb-16">
+                <span class="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold">Ιατρικες Υπηρεσιες</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-evergreen-900 mt-2">
+                    Ολοκληρωμένη Παιδιατρική Μέριμνα
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">01 / ΠΡΟΛΗΨΗ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">Προληπτική Παιδιατρική &amp; Εμβολιασμοί</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Πλήρης προληπτικός έλεγχος, διενέργεια εμβολιασμών βάσει εθνικού προγράμματος και έκδοση ατομικών δελτίων υγείας μαθητή (ΑΔΥΜ).
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">02 / ΑΝΑΠΤΥΞΗ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">Παρακολούθηση Ανάπτυξης &amp; Αύξησης</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Σωματομετρική αξιολόγηση (βάρος, ύψος, περίμετρος κεφαλής), έλεγχος αναπτυξιακών οροσήμων και κινητικής εξέλιξης.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">03 / ΝΕΟΓΝΑ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">Υποστήριξη Θηλασμού &amp; Νεογνού</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Εξειδικευμένη καθοδήγηση μητρικού θηλασμού, αντιμετώπιση κολικών, φροντίδα ομφαλού και διατροφικές οδηγίες απογαλακτισμού.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">04 / ΔΙΑΓΝΩΣΗ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">Διάγνωση &amp; Θεραπεία Λοιμώξεων</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Αντιμετώπιση οξέων παιδιατρικών περιστατικών (ιώσεις, λοιμώξεις αναπνευστικού, πυρετός, γαστρεντερίτιδες, αλλεργίες).
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">05 / ΕΠΕΙΓΟΝΤΑ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">24/7 Τηλεφωνική Κάλυψη</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Δυνατότητα άμεσης επικοινωνίας με τη γιατρό για έκτακτα συμπτώματα, αξιολόγηση σοβαρότητας και οδηγίες πρώτων βοηθειών.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
+                    <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">06 / ΕΠΙΣΚΕΨΕΙΣ</span>
+                    <h3 class="font-serif text-2xl text-evergreen-900">Κατ' Οίκον Επισκέψεις</h3>
+                    <p class="text-xs text-slateDark/80 leading-relaxed">
+                        Δυνατότητα κατ' οίκον εξέτασης νεογνών ή εκτάκτων περιστατικών κατόπιν συνεννόησης στην περιοχή της Θέρμης και γύρω περιοχών.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Development Guide -->
+    <section id="milestones" class="py-24 bg-cream border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold">Χρήσιμος Οδηγός</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-evergreen-900 mt-2">
+                    Στάδια Ανάπτυξης &amp; Επισκέψεις
+                </h2>
+                <p class="text-xs text-slateDark/70 mt-2">
+                    Επιλέξτε την ηλικία του παιδιού σας για να δείτε τα βασικά αναπτυξιακά ορόσημα:
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap gap-4 border-b hairline-border pb-4 mb-8">
+                <button onclick="switchTab('tab-0')" class="tab-btn active px-6 py-3 text-xs uppercase tracking-wider font-medium text-slateDark hover:text-gold-600 transition-colors" id="btn-tab-0">
+                    0 — 1 Μηνών (Νεογνό)
+                </button>
+                <button onclick="switchTab('tab-1')" class="tab-btn px-6 py-3 text-xs uppercase tracking-wider font-medium text-slateDark hover:text-gold-600 transition-colors" id="btn-tab-1">
+                    2 — 6 Μηνών
+                </button>
+                <button onclick="switchTab('tab-2')" class="tab-btn px-6 py-3 text-xs uppercase tracking-wider font-medium text-slateDark hover:text-gold-600 transition-colors" id="btn-tab-2">
+                    12 Μηνών (1 Έτος)
+                </button>
+                <button onclick="switchTab('tab-3')" class="tab-btn px-6 py-3 text-xs uppercase tracking-wider font-medium text-slateDark hover:text-gold-600 transition-colors" id="btn-tab-3">
+                    2 — 3 Ετών
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="tab-content" class="bg-sand p-8 border hairline-border">
+                <div id="tab-0-content" class="space-y-4">
+                    <h3 class="font-serif text-2xl text-evergreen-900">Πρώτος Μήνας &amp; Νεογνικός Έλεγχος</h3>
+                    <ul class="space-y-2 text-xs text-slateDark/80 list-disc list-inside leading-relaxed">
+                        <li>Πρώτη παιδιατρική εξέταση εντός 5-10 ημερών από τη γέννηση.</li>
+                        <li>Έλεγχος σωματικού βάρους, ικτέρου και επούλωσης ομφαλού.</li>
+                        <li>Αξιολόγηση θηλασμού και προγράμματος σίτισης.</li>
+                        <li>Συμβουλές για τον ύπνο, την ασφάλεια και το περιβάλλον του μωρού.</li>
+                    </ul>
+                </div>
+
+                <div id="tab-1-content" class="space-y-4 hidden">
+                    <h3 class="font-serif text-2xl text-evergreen-900">2 έως 6 Μήνες — Πρώτοι Εμβολιασμοί</h3>
+                    <ul class="space-y-2 text-xs text-slateDark/80 list-disc list-inside leading-relaxed">
+                        <li>Έναρξη βασικού εμβολιαστικού σχήματος (2ος, 4ος, 6ος μήνας).</li>
+                        <li>Παρακολούθηση αύξησης βάρους, μήκους και περιμέτρου κεφαλής.</li>
+                        <li>Έλεγχος οπτικής επαφής, χαμόγελου και στηρίγματος κεφαλής.</li>
+                        <li>Προετοιμασία για την εισαγωγή στερεών τροφών (στον 6ο μήνα).</li>
+                    </ul>
+                </div>
+
+                <div id="tab-2-content" class="space-y-4 hidden">
+                    <h3 class="font-serif text-2xl text-evergreen-900">12 Μήνες — Πρώτα Βήματα &amp; Λέξεις</h3>
+                    <ul class="space-y-2 text-xs text-slateDark/80 list-disc list-inside leading-relaxed">
+                        <li>Επαναληπτικοί εμβολιασμοί 1ου έτους.</li>
+                        <li>Αξιολόγηση αυτόνομης στάσης/βάδισης και λεπτής κινητικότητας.</li>
+                        <li>Έλεγχος λόγου (πρώτες λέξεις, ανταπόκριση στο όνομα).</li>
+                        <li>Μετάβαση σε πλήρες οικογενειακό διαιτολόγιο.</li>
+                    </ul>
+                </div>
+
+                <div id="tab-3-content" class="space-y-4 hidden">
+                    <h3 class="font-serif text-2xl text-evergreen-900">2 έως 3 Έτη — Κοινωνικοποίηση &amp; Λόγος</h3>
+                    <ul class="space-y-2 text-xs text-slateDark/80 list-disc list-inside leading-relaxed">
+                        <li>Αναπτυξιακός έλεγχος λόγου, εκφοράς προτάσεων και συμπεριφοράς.</li>
+                        <li>Έκδοση Ατομικού Δελτίου Υγείας (ΑΔΥΜ) για παιδικό σταθμό.</li>
+                        <li>Συμβουλευτική για αγωγή τουαλέτας και όρια.</li>
+                        <li>Προληπτικός έλεγχος όρασης και ακοής.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section id="reviews" class="py-24 bg-sand border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold">Εμπειριες Γονεων</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-evergreen-900 mt-2">
+                        Αξιολογήσεις από το Google Maps
+                    </h2>
+                </div>
+                <div class="flex items-center gap-3 bg-cream px-6 py-3 border hairline-border">
+                    <span class="font-serif text-3xl text-gold-600 font-bold">5.0</span>
+                    <div class="text-xs">
+                        <div class="text-amber-500 font-bold">★★★★★</div>
+                        <span class="text-slateDark/70">111 Κριτικές Γονέων</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authentic Reviews Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-xs text-slateDark/80 italic leading-relaxed">
+                            «Πήγαμε το βρεφάκι μας λίγο μικρότερο από 11 μηνών στην κα Ολυμπία λόγω σχολίων και μιας φίλης. Η γιατρός αφιέρωσε πολύ χρόνο να ακούσει το πρόβλημά μας... Εξαιρετική επιστήμονας!»
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t hairline-border">
+                        <p class="font-serif text-base text-evergreen-900 font-semibold">nicoleta theodosiadou</p>
+                        <span class="text-[10px] text-slateDark/60 uppercase tracking-wider">Google Review</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-xs text-slateDark/80 italic leading-relaxed">
+                            «Η Ολυμπία είναι παιδίατρος μας από όταν γεννήθηκε η κόρη μου. 5 ημερών την εξέτασε πρώτη φορά. Σήμερα είναι 2.5 χρονών και μετά από τόσο καιρό έχω να πω μόνο τα καλύτερα! Υπέροχη, πάντα δίπλα μας. Έμπειρη, ήρεμη.»
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t hairline-border">
+                        <p class="font-serif text-base text-evergreen-900 font-semibold">Nantia Konstadina</p>
+                        <span class="text-[10px] text-slateDark/60 uppercase tracking-wider">Google Review</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-xs text-slateDark/80 italic leading-relaxed">
+                            «Η παιδίατρος Ολυμπία Σιαμπαρλή είναι εξαιρετική! Συνδυάζει άριστη επιστημονική κατάρτιση με γλυκύτητα και υπομονή, κάνοντας παιδιά και γονείς να τη συμπαθούν αμέσως. Τη συστήνω ανεπιφύλακτα!»
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t hairline-border">
+                        <p class="font-serif text-base text-evergreen-900 font-semibold">natasa pavlou</p>
+                        <span class="text-[10px] text-slateDark/60 uppercase tracking-wider">Τοπικός Οδηγός Google</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-24 bg-cream border-b hairline-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold">Επικοινωνια &amp; Τοποθεσια</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-evergreen-900 mt-2">
+                            Παιδιατρικό Ιατρείο στη Θέρμη
+                        </h2>
+                    </div>
+
+                    <div class="space-y-6 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border hairline-border flex items-center justify-center bg-sand text-gold-600 shrink-0">📍</div>
+                            <div>
+                                <h4 class="font-semibold text-evergreen-900">Διεύθυνση</h4>
+                                <p class="text-xs text-slateDark/80 mt-1">Βασιλικής Ταβάκη 15, Θέρμη 570 01, Θεσσαλονίκη</p>
+                                <p class="text-[11px] text-gold-600 mt-1">Plus Code: G2V9+RJ Θέρμη</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border hairline-border flex items-center justify-center bg-sand text-gold-600 shrink-0">📞</div>
+                            <div>
+                                <h4 class="font-semibold text-evergreen-900">Τηλέφωνο Επικοινωνίας</h4>
+                                <a href="tel:6948172766" class="text-xs text-gold-600 font-bold mt-1 block hover:underline">694 817 2766</a>
+                                <p class="text-[11px] text-slateDark/60 mt-0.5">Άμεση τηλεφωνική εξυπηρέτηση &amp; επείγοντα</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border hairline-border flex items-center justify-center bg-sand text-gold-600 shrink-0">📅</div>
+                            <div>
+                                <h4 class="font-semibold text-evergreen-900">Ραντεβού</h4>
+                                <p class="text-xs text-slateDark/80 mt-1">Δεχόμαστε κατόπιν τηλεφωνικού ραντεβού για την αποφυγή συνωστισμού και αναμονής.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal()" class="w-full bg-evergreen-900 text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-gold-500 transition-colors">
+                        Προγραμματιστε Ραντεβου
+                    </button>
+                </div>
+
+                <!-- Google Maps Embed Frame -->
+                <div class="lg:col-span-7 bg-sand border hairline-border p-3 h-[420px]">
+                    <iframe 
+                        title="Χάρτης Ιατρείου"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.347891283724!2d22.998!3d40.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8183111111111%3A0x1111111111111111!2zzpLOsc-DzrnOu865zrrOrs-CIM6kzrHOss6szrrOtyAxNSwgzpjOrc-BzrzOtyA1NzAgMDE!5e0!3m2!1sel!2sgr!4v1600000000000!5m2!1sel!2sgr" 
+                        class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-evergreen-900 text-cream/70 py-12 text-xs border-t hairline-border-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="font-serif text-lg text-white">Δρ. Ολυμπία Σιαμπαρλή — Παιδίατρος</p>
+                <p class="text-white/50 text-[11px] mt-1">Βασιλικής Ταβάκη 15, Θέρμη 570 01 | Τηλ: 694 817 2766</p>
+            </div>
+            <p class="text-white/40 text-[11px]">
+                &copy; <script>document.write(new Date().getFullYear())</script> Δρ. Ολυμπία Σιαμπαρλή. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-cream border hairline-border p-8 max-w-lg w-full space-y-6 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slateDark/60 hover:text-slateDark text-xl">✕</button>
+            
+            <div>
+                <span class="text-[10px] tracking-widest text-gold-600 uppercase font-semibold">Αιτημα Ραντεβου</span>
+                <h3 class="font-serif text-2xl text-evergreen-900 mt-1">Επικοινωνήστε με το Ιατρείο</h3>
+                <p class="text-xs text-slateDark/70 mt-1">Συμπληρώστε τα στοιχεία σας και θα σας καλέσουμε άμεσα για επιβεβαίωση.</p>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Ονοματεπώνυμο Γονέα *</label>
+                    <input type="text" required class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Τηλέφωνο Επικοινωνίας *</label>
+                    <input type="tel" required class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Ηλικία Παιδιού / Αιτία Επίσκεψης</label>
+                    <textarea rows="3" class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500" placeholder="π.χ. Εμβολιασμός 6 μηνών, Έκτακτος πυρετός κλπ."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-evergreen-900 text-cream py-3.5 text-xs tracking-widest uppercase font-semibold hover:bg-gold-500 transition-colors">
+                    Αποστολη Αιτηματος
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Vanilla JavaScript for Tabs and Modal -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            for (let i = 0; i < 4; i++) {
+                document.getElementById(`tab-${i}-content`).classList.add('hidden');
+                document.getElementById(`btn-tab-${i}`).classList.remove('active');
+            }
+            // Show selected tab content
+            document.getElementById(`${tabId}-content`).classList.remove('hidden');
+            document.getElementById(`btn-${tabId}`).classList.add('active');
+        }
+
+        // Modal Logic
+        function openModal() {
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Ευχαριστούμε! Το αίτημα ραντεβού εστάλη. Θα επικοινωνήσουμε μαζί σας άμεσα στο τηλέφωνο που δηλώσατε.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
