@@ -39,7 +39,6 @@
         }
     </script>
     <style>
-        /* Custom Fine Hairline Grid & Base Styles */
         body {
             background-color: #FAF8F5;
             color: #182620;
@@ -55,7 +54,6 @@
             border-color: rgba(255, 255, 255, 0.15);
         }
 
-        /* Hero Background Overlay with Image */
         .hero-bg-section {
             background-image: linear-gradient(to bottom, rgba(18, 28, 23, 0.85), rgba(18, 28, 23, 0.88)), url('hero-bg.jpg');
             background-size: cover;
@@ -63,14 +61,12 @@
             background-repeat: no-repeat;
         }
 
-        /* Subtle Transitions */
         .tab-btn.active {
             border-bottom: 2px solid #B69359;
             color: #121C17;
             font-weight: 600;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -89,10 +85,12 @@
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
             <div class="flex items-center gap-2">
                 <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Παιδιατρική Υποστήριξη & Επείγοντα Περιστατικά</span>
+                <span>Παιδιατρική Υποστήριξη &amp; Επείγοντα Περιστατικά</span>
             </div>
             <div class="flex items-center gap-6">
-                <span>📍 Βασιλικής Ταβάκη 15, Θέρμη</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="hover:text-gold-500 transition-colors">
+                    📍 Βασιλικής Ταβάκη 15, Θέρμη
+                </a>
                 <a href="tel:6948172766" class="text-gold-500 font-semibold hover:underline">📞 694 817 2766</a>
             </div>
         </div>
@@ -105,7 +103,6 @@
             <!-- Logo with Stethoscope Emblem -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 border border-gold-500/40 flex items-center justify-center bg-sand text-gold-500 transition-colors group-hover:bg-gold-500 group-hover:text-white">
-                    <!-- Stethoscope Icon -->
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4.8 2.4A2.4 2.4 0 0 0 2.4 4.8v4.8a7.2 7.2 0 0 0 14.4 0V4.8a2.4 2.4 0 0 0-2.4-2.4"/>
                         <path d="M9.6 16.8v1.2a3.6 3.6 0 0 0 7.2 0v-2.4"/>
@@ -127,11 +124,10 @@
                 <a href="#contact" class="hover:text-gold-600 transition-colors">Επικοινωνια</a>
             </nav>
 
-            <!-- CTA Button -->
-            <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 border border-evergreen-900 bg-evergreen-900 text-cream px-5 py-2.5 text-xs tracking-wider uppercase hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
-                <span>Ραντεβου</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
+            <!-- Direct Call Button -->
+            <a href="tel:6948172766" class="hidden sm:inline-flex items-center gap-2 border border-evergreen-900 bg-evergreen-900 text-cream px-5 py-2.5 text-xs tracking-wider uppercase hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
+                <span>📞 Κληση Ιατρειου</span>
+            </a>
         </div>
     </header>
 
@@ -141,12 +137,12 @@
             
             <div class="lg:col-span-8 space-y-6">
                 <!-- Google Badge Proof -->
-                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 border hairline-border-light text-xs tracking-wider">
+                <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 border hairline-border-light text-xs tracking-wider hover:bg-white/20 transition-colors">
                     <div class="flex text-amber-400 text-sm">★★★★★</div>
                     <span class="font-semibold text-white">5.0 / 5.0</span>
                     <span class="text-white/60">|</span>
                     <span class="text-white/80">111 Επαληθευμένες Αξιολογήσεις Google</span>
-                </div>
+                </a>
 
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-tight">
                     Επιστημονική αφοσίωση, <br>
@@ -158,11 +154,11 @@
                 </p>
 
                 <div class="pt-4 flex flex-wrap gap-4 items-center">
-                    <button onclick="openModal()" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
-                        Προγραμματισμος Επισκεψης
-                    </button>
-                    <a href="tel:6948172766" class="border border-white/30 hover:border-white text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
-                        📞 694 817 2766
+                    <a href="tel:6948172766" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
+                        📞 Τηλεφωνικο Ραντεβου
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="border border-white/30 hover:border-white text-white px-8 py-4 text-xs tracking-widest uppercase font-semibold transition-colors duration-300">
+                        📍 Οδηγιες Προσβασης
                     </a>
                 </div>
             </div>
@@ -176,7 +172,9 @@
                         <span class="text-gold-500 font-bold">📍</span>
                         <div>
                             <p class="font-medium">Διεύθυνση</p>
-                            <p class="text-xs text-white/70">Βασιλικής Ταβάκη 15, Θέρμη 570 01</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="text-xs text-white/70 hover:text-gold-500 underline transition-colors">
+                                Βασιλικής Ταβάκη 15, Θέρμη 570 01
+                            </a>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
@@ -280,7 +278,6 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">01 / ΠΡΟΛΗΨΗ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">Προληπτική Παιδιατρική &amp; Εμβολιασμοί</h3>
@@ -289,7 +286,6 @@
                     </p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">02 / ΑΝΑΠΤΥΞΗ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">Παρακολούθηση Ανάπτυξης &amp; Αύξησης</h3>
@@ -298,7 +294,6 @@
                     </p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">03 / ΝΕΟΓΝΑ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">Υποστήριξη Θηλασμού &amp; Νεογνού</h3>
@@ -307,7 +302,6 @@
                     </p>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">04 / ΔΙΑΓΝΩΣΗ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">Διάγνωση &amp; Θεραπεία Λοιμώξεων</h3>
@@ -316,7 +310,6 @@
                     </p>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">05 / ΕΠΕΙΓΟΝΤΑ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">24/7 Τηλεφωνική Κάλυψη</h3>
@@ -325,7 +318,6 @@
                     </p>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="p-8 bg-cream border hairline-border space-y-4 hover:border-gold-500 transition-colors">
                     <span class="text-xs font-serif text-gold-600 tracking-widest uppercase">06 / ΕΠΙΣΚΕΨΕΙΣ</span>
                     <h3 class="font-serif text-2xl text-evergreen-900">Κατ' Οίκον Επισκέψεις</h3>
@@ -426,19 +418,18 @@
                         Αξιολογήσεις από το Google Maps
                     </h2>
                 </div>
-                <div class="flex items-center gap-3 bg-cream px-6 py-3 border hairline-border">
+                <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="flex items-center gap-3 bg-cream px-6 py-3 border hairline-border hover:border-gold-500 transition-colors">
                     <span class="font-serif text-3xl text-gold-600 font-bold">5.0</span>
                     <div class="text-xs">
                         <div class="text-amber-500 font-bold">★★★★★</div>
                         <span class="text-slateDark/70">111 Κριτικές Γονέων</span>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- Authentic Reviews Cards -->
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Review 1 -->
                 <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-amber-500 text-sm">★★★★★</div>
@@ -452,7 +443,6 @@
                     </div>
                 </div>
 
-                <!-- Review 2 -->
                 <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-amber-500 text-sm">★★★★★</div>
@@ -466,7 +456,6 @@
                     </div>
                 </div>
 
-                <!-- Review 3 -->
                 <div class="bg-cream p-8 border hairline-border space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-amber-500 text-sm">★★★★★</div>
@@ -502,8 +491,11 @@
                         <div class="flex items-start gap-4">
                             <div class="w-10 h-10 border hairline-border flex items-center justify-center bg-sand text-gold-600 shrink-0">📍</div>
                             <div>
-                                <h4 class="font-semibold text-evergreen-900">Διεύθυνση</h4>
-                                <p class="text-xs text-slateDark/80 mt-1">Βασιλικής Ταβάκη 15, Θέρμη 570 01, Θεσσαλονίκη</p>
+                                <h4 class="font-semibold text-evergreen-900">Διεύθυνση Ιατρείου</h4>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="text-xs text-slateDark/80 hover:text-gold-600 mt-1 block font-medium underline">
+                                    Σιαμπαρλή Ολυμπία - Παιδίατρος<br>
+                                    Βασιλικής Ταβάκη 15, Θέρμη 570 01
+                                </a>
                                 <p class="text-[11px] text-gold-600 mt-1">Plus Code: G2V9+RJ Θέρμη</p>
                             </div>
                         </div>
@@ -520,22 +512,22 @@
                         <div class="flex items-start gap-4">
                             <div class="w-10 h-10 border hairline-border flex items-center justify-center bg-sand text-gold-600 shrink-0">📅</div>
                             <div>
-                                <h4 class="font-semibold text-evergreen-900">Ραντεβού</h4>
+                                <h4 class="font-semibold text-evergreen-900">Προγραμματισμός Επίσκεψης</h4>
                                 <p class="text-xs text-slateDark/80 mt-1">Δεχόμαστε κατόπιν τηλεφωνικού ραντεβού για την αποφυγή συνωστισμού και αναμονής.</p>
                             </div>
                         </div>
                     </div>
 
-                    <button onclick="openModal()" class="w-full bg-evergreen-900 text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-gold-500 transition-colors">
-                        Προγραμματιστε Ραντεβου
-                    </button>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Σιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" class="inline-flex items-center justify-center gap-2 w-full bg-evergreen-900 text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-gold-500 transition-colors">
+                        <span>📍 Ανοιγμα στο Google Maps (Πλοηγηση)</span>
+                    </a>
                 </div>
 
-                <!-- Google Maps Embed Frame -->
-                <div class="lg:col-span-7 bg-sand border hairline-border p-3 h-[420px]">
+                <!-- Google Maps Exact Place Embed -->
+                <div class="lg:col-span-7 bg-sand border hairline-border p-3 h-[420px] relative">
                     <iframe 
-                        title="Χάρτης Ιατρείου"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.347891283724!2d22.998!3d40.548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8183111111111%3A0x1111111111111111!2zzpLOsc-DzrnOu865zrrOrs-CIM6kzrHOss6szrrOtyAxNSwgzpjOrc-BzrzOtyA1NzAgMDE!5e0!3m2!1sel!2sgr!4v1600000000000!5m2!1sel!2sgr" 
+                        title="Χάρτης Ιατρείου Σιαμπαρλή Ολυμπία"
+                        src="https://maps.google.com/maps?q=Σιαμπαρλή%20Ολυμπία%20-%20Παιδίατρος,%20Βασιλικής%20Ταβάκη%2015,%20Θέρμη&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                         class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
                         allowfullscreen="" 
                         loading="lazy">
@@ -559,66 +551,15 @@
         </div>
     </footer>
 
-    <!-- Appointment Modal -->
-    <div id="appointment-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-cream border hairline-border p-8 max-w-lg w-full space-y-6 relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slateDark/60 hover:text-slateDark text-xl">✕</button>
-            
-            <div>
-                <span class="text-[10px] tracking-widest text-gold-600 uppercase font-semibold">Αιτημα Ραντεβου</span>
-                <h3 class="font-serif text-2xl text-evergreen-900 mt-1">Επικοινωνήστε με το Ιατρείο</h3>
-                <p class="text-xs text-slateDark/70 mt-1">Συμπληρώστε τα στοιχεία σας και θα σας καλέσουμε άμεσα για επιβεβαίωση.</p>
-            </div>
-
-            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Ονοματεπώνυμο Γονέα *</label>
-                    <input type="text" required class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500">
-                </div>
-                <div>
-                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Τηλέφωνο Επικοινωνίας *</label>
-                    <input type="tel" required class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500">
-                </div>
-                <div>
-                    <label class="block text-[11px] uppercase tracking-wider text-slateDark/80 mb-1">Ηλικία Παιδιού / Αιτία Επίσκεψης</label>
-                    <textarea rows="3" class="w-full bg-sand border hairline-border px-4 py-2.5 text-xs focus:outline-none focus:border-gold-500" placeholder="π.χ. Εμβολιασμός 6 μηνών, Έκτακτος πυρετός κλπ."></textarea>
-                </div>
-                <button type="submit" class="w-full bg-evergreen-900 text-cream py-3.5 text-xs tracking-widest uppercase font-semibold hover:bg-gold-500 transition-colors">
-                    Αποστολη Αιτηματος
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Vanilla JavaScript for Tabs and Modal -->
+    <!-- JavaScript for Tabs -->
     <script>
-        // Tab switching logic
         function switchTab(tabId) {
-            // Hide all tab contents
             for (let i = 0; i < 4; i++) {
                 document.getElementById(`tab-${i}-content`).classList.add('hidden');
                 document.getElementById(`btn-tab-${i}`).classList.remove('active');
             }
-            // Show selected tab content
             document.getElementById(`${tabId}-content`).classList.remove('hidden');
             document.getElementById(`btn-${tabId}`).classList.add('active');
-        }
-
-        // Modal Logic
-        function openModal() {
-            const modal = document.getElementById('appointment-modal');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('appointment-modal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            alert('Ευχαριστούμε! Το αίτημα ραντεβού εστάλη. Θα επικοινωνήσουμε μαζί σας άμεσα στο τηλέφωνο που δηλώσατε.');
-            closeModal();
         }
     </script>
 </body>
