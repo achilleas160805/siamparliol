@@ -2,98 +2,454 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<title>Αναβαθμισμένο Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Τσιαμπαρλή Ολυμπία — Παιδίατρος Θέρμη</title>
+<meta name="description" content="Παιδιατρικό Ιατρείο Ολυμπίας Τσιαμπαρλή στη Θέρμη Θεσσαλονίκης. Εξειδικευμένη παιδιατρική φροντίδα, εμβολιασμοί, παρακολούθηση ανάπτυξης & 24/7 υποστήριξη.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E5754' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.8 2.4A2.4 2.4 0 0 0 2.4 4.8v4.8a7.2 7.2 0 0 0 14.4 0V4.8a2.4 2.4 0 0 0-2.4-2.4'/><path d='M9.6 16.8v1.2a3.6 3.6 0 0 0 7.2 0v-2.4'/><circle cx='16.8' cy='13.2' r='2.4'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,300;1,7..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-        font-family: system-ui, sans-serif;
-        min-height: 100vh;
-        background: url('background.jpg') center/cover fixed no-repeat;
-        background-size: 110% 110%;
-        animation: bgPan 40s ease-in-out infinite;
-        color: #fff;
-        overflow-x: hidden;
-    }
-    
-    @keyframes bgPan {
-        0%, 100% { background-position: 0% 50%; }
-        50%      { background-position: 100% 50%; }
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        position: relative;
-        z-index: 2;
-    }
-    
-    h1 {
-        font-size: 3.5rem;
-        text-align: center;
-        margin-bottom: 40px;
-        background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6, #60a5fa);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 6s ease infinite;
-    }
-    
-    @keyframes gradientShift {
-        0%, 100% { background-position: 0% 50%; }
-        50%      { background-position: 100% 50%; }
-    }
-    
-    .card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        margin-bottom: 20px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .card:hover {
-        transform: translateY(-8px) scale(1.02);
-        background: rgba(255, 255, 255, 0.18);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-    
-    .reveal {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+:root{--ink:#12263a;--teal:#1e5754;--teal-d:#163f3c;--mist:#e8efec;--paper:#fdfbf8;--mute:#4d5f6e;--line:rgba(18,38,58,.13);--star:#c58f2f;--serif:'Literata',Georgia,serif;--sans:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:112px 0}
+.mist{background:var(--mist)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.015em}
+h2{font-size:clamp(30px,4vw,46px);font-weight:300}
+.tag{font-size:14px;font-weight:600;color:var(--teal);display:block;margin-bottom:14px}
+.i{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;background:var(--teal);color:#fff;font-size:14.5px;font-weight:600;border:1px solid var(--teal);transition:background .25s,color .25s,border-color .25s,transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s;position:relative;overflow:hidden}
+.btn:hover{background:var(--teal-d);border-color:var(--teal-d);transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(30,87,84,.45)}
+.btn.o{background:transparent;color:var(--ink);border-color:rgba(18,38,58,.35)}
+.btn.o:hover{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 12px 24px -8px rgba(18,38,58,.35)}
+.btn .i{transition:transform .3s ease}
+.btn:hover .i{transform:translateY(-1px) scale(1.08)}
+.st{color:var(--star);letter-spacing:3px;font-size:14px}
+
+.top{background:var(--mist);font-size:13px;color:var(--mute)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:8px 32px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.top div{display:flex;gap:28px;flex-wrap:wrap}
+.top a{display:inline-flex;align-items:center;gap:8px;transition:color .25s}
+.top a:hover{color:var(--teal)}
+.top a.ph{color:var(--ink);font-weight:700}
+.top a.ph:hover{color:var(--teal)}
+
+body>header{position:sticky;top:0;z-index:50;background:rgba(253,251,248,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
+body>header.scrolled{box-shadow:0 4px 24px -8px rgba(18,38,58,.12);background:rgba(253,251,248,.98)}
+body>header .wrap{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;transition:transform .3s}
+.brand:hover{transform:translateY(-1px)}
+.mark{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.brand:hover .mark{transform:rotate(-8deg) scale(1.06);box-shadow:0 8px 20px -6px rgba(30,87,84,.5)}
+.mark .i{width:21px;height:21px}
+.brand b{display:block;font:400 20px/1.2 var(--serif);letter-spacing:-.01em}
+.brand small{display:block;font-size:12.5px;color:var(--mute);margin-top:1px}
+nav{display:flex;gap:38px;font-size:14.5px;font-weight:500}
+nav a{color:var(--mute);padding:6px 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s;position:relative}
+nav a:hover{color:var(--ink);border-color:var(--teal)}
+
+/* HERO — πιο έντονο background */
+.hero{padding:88px 0 112px;overflow:hidden;position:relative;
+background:linear-gradient(90deg,rgba(253,251,248,.55) 0%,rgba(253,251,248,.42) 45%,rgba(253,251,248,.18) 100%),url('hero-bg.jpg') center/cover no-repeat,var(--paper);
+background-size:cover,cover,auto;
+animation:heroZoom 22s ease-in-out infinite alternate}
+@keyframes heroZoom{from{background-position:0% 50%,center,0 0;background-size:cover,cover,auto}to{background-position:100% 50%,center,0 0;background-size:105%,cover,auto}}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.rate{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--mute);margin-bottom:36px;padding:8px 18px;background:rgba(253,251,248,.85);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:999px;transition:border-color .3s,transform .3s,box-shadow .3s}
+.rate:hover{border-color:var(--teal);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(30,87,84,.25)}
+h1{font-size:clamp(38px,5.4vw,70px);font-weight:300;line-height:1.08;letter-spacing:-.025em;margin-bottom:30px;text-shadow:0 1px 30px rgba(253,251,248,.6)}
+.lead{max-width:540px;font-size:17.5px;color:var(--mute);text-shadow:0 1px 20px rgba(253,251,248,.5)}
+.acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:42px}
+
+/* Hero entrance animations */
+.hero .rate{opacity:0;animation:fadeUp .8s .1s cubic-bezier(.4,0,.2,1) forwards}
+.hero h1{opacity:0;animation:fadeUp .9s .25s cubic-bezier(.4,0,.2,1) forwards}
+.hero .lead{opacity:0;animation:fadeUp .9s .4s cubic-bezier(.4,0,.2,1) forwards}
+.hero .acts{opacity:0;animation:fadeUp .9s .55s cubic-bezier(.4,0,.2,1) forwards}
+.hero .arch{opacity:0;animation:fadeInScale 1s .35s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInScale{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+.arch{position:relative;max-width:410px;width:100%;justify-self:center;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.arch:hover{transform:translateY(-6px)}
+.arch:before{content:"";position:absolute;inset:22px -22px -22px 22px;border-radius:220px 220px 28px 28px;background:var(--mist);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.arch:hover:before{transform:translate(6px,6px)}
+.arch>div{position:relative;background:var(--teal);color:#fff;border-radius:205px 205px 28px 28px;padding:132px 44px 48px;box-shadow:0 30px 60px -30px rgba(30,87,84,.5)}
+.arch h3{font-size:30px;font-weight:300;margin-bottom:26px;text-align:center}
+.arch dl>div{padding:17px 0;border-top:1px solid rgba(255,255,255,.2)}
+.arch dt{font-size:12.5px;font-weight:600;color:#a9cdc8;margin-bottom:2px}
+.arch dd{font-size:14.5px;line-height:1.55}
+.arch a:hover{text-decoration:underline}
+
+/* Scroll-reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.4,0,.2,1),transform .9s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+.about .wrap{display:grid;grid-template-columns:5fr 6fr;gap:100px;align-items:start}
+.about h2{margin-bottom:28px}
+.about .intro p{color:var(--mute);margin-bottom:16px}
+.stats{display:flex;gap:56px;margin-top:40px;padding:26px 30px;background:var(--mist);border-radius:20px;transition:transform .4s,box-shadow .4s}
+.stats:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(18,38,58,.18)}
+.stats b{font:300 42px/1 var(--serif);color:var(--teal);display:block;margin-bottom:8px}
+.stats span{font-size:13px;font-weight:600;color:var(--mute);line-height:1.4;display:block}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:44px 48px;padding-top:6px}
+.feats h3{font-size:23px;margin-bottom:10px;padding-top:20px;border-top:2px solid var(--teal);transition:border-color .3s,transform .3s}
+.feats>div{transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.feats>div:hover{transform:translateY(-4px)}
+.feats>div:hover h3{border-color:var(--star)}
+.feats p{font-size:15px;color:var(--mute)}
+
+.head{max-width:680px;margin-bottom:56px}
+.rows>div{display:grid;grid-template-columns:170px 1fr 1.3fr;gap:16px 48px;padding:34px 0;border-top:1px solid var(--line);align-items:baseline;transition:background .35s,padding .35s;position:relative}
+.rows>div:last-child{border-bottom:1px solid var(--line)}
+.rows>div:hover{background:linear-gradient(90deg,transparent,rgba(30,87,84,.05),transparent);padding-left:14px;padding-right:14px}
+.rows .tag{margin:0;transition:transform .35s}
+.rows>div:hover .tag{transform:translateX(4px)}
+.rows h3{font-size:24px;transition:color .3s}
+.rows>div:hover h3{color:var(--teal)}
+.rows p{font-size:15px;color:var(--mute)}
+
+.ms .wrap{display:grid;grid-template-columns:4fr 8fr;gap:88px;align-items:start}
+.ms .head{margin-bottom:0}
+.ms .head p{color:var(--mute);margin-top:18px;font-size:15px}
+.tabs{display:flex;flex-direction:column;gap:6px;margin-top:36px}
+.tab{font:500 15px/1.4 var(--sans);text-align:left;padding:15px 20px;border:0;border-radius:14px;background:transparent;color:var(--mute);cursor:pointer;transition:background .25s,color .25s,transform .25s,padding-left .25s}
+.tab:hover{background:var(--mist);color:var(--ink);transform:translateX(3px);padding-left:24px}
+.tab.active{background:var(--teal);color:#fff;transform:translateX(3px);padding-left:24px;box-shadow:0 8px 20px -10px rgba(30,87,84,.5)}
+.pane{display:none;background:var(--mist);border-radius:28px;padding:52px 56px}
+.pane.on{display:block;animation:fd .5s cubic-bezier(.4,0,.2,1)}
+@keyframes fd{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pane h3{font-size:32px;font-weight:300;margin-bottom:28px}
+.pane li{display:flex;gap:16px;padding:15px 0;border-top:1px solid var(--line);color:#2d4356;transition:padding-left .3s,color .3s}
+.pane li:hover{padding-left:6px;color:var(--teal)}
+.pane li:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal);margin-top:9px;flex:none;transition:transform .3s,background .3s}
+.pane li:hover:before{transform:scale(1.3);background:var(--star)}
+
+.rev .top2{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:56px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.q{display:flex;flex-direction:column;justify-content:space-between;gap:30px;padding:28px;border-radius:20px;border:1px solid transparent;transition:transform .5s cubic-bezier(.4,0,.2,1),border-color .4s,box-shadow .4s,background .4s}
+.q:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:0 24px 48px -24px rgba(18,38,58,.18);background:var(--paper)}
+.q p{font:italic 300 20px/1.65 var(--serif);margin-top:16px;color:#1c3348}
+.q b{display:block;font-size:15px;font-weight:700}
+.q small{font-size:13px;color:var(--mute)}
+.q .w{padding-top:20px;border-top:1px solid var(--line);transition:border-color .3s}
+.q:hover .w{border-color:var(--teal)}
+.q .st{display:inline-block;transition:transform .3s}
+.q:hover .st{transform:scale(1.08)}
+
+.contact .wrap{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center}
+.contact h2{margin-bottom:28px}
+.info>div{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line);transition:padding-left .35s}
+.info>div:hover{padding-left:8px}
+.info .ic{width:42px;height:42px;border-radius:50%;background:var(--mist);color:var(--teal);display:grid;place-items:center;flex:none;transition:transform .4s cubic-bezier(.34,1.56,.64,1),background .3s,color .3s}
+.info>div:hover .ic{transform:scale(1.1) rotate(-6deg);background:var(--teal);color:#fff}
+.info h4{font:600 15px/1.4 var(--sans);margin-bottom:3px}
+.info p,.info a{font-size:15px;color:var(--mute);display:block}
+.info a{transition:color .25s}
+.info a:hover{color:var(--teal)}
+.info .n{color:var(--teal);font-weight:700}
+.info small{display:block;font-size:13px;color:var(--teal);font-weight:600;margin-top:4px}
+.contact .btn{margin-top:14px}
+.map{height:470px;border-radius:28px;overflow:hidden;background:var(--mist);border:1px solid var(--line);transition:box-shadow .5s,transform .5s}
+.map:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(18,38,58,.25)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.8) sepia(.1);transition:filter .6s}
+.map:hover iframe{filter:none}
+
+body>footer{background:var(--ink);color:rgba(253,251,248,.7);padding:52px 0;font-size:14px}
+body>footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+body>footer b{display:block;font:300 22px/1.3 var(--serif);color:#fff;margin-bottom:4px}
+body>footer p{font-size:13px}
+
+/* Progress bar στο πάνω μέρος */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--teal),var(--star));z-index:100;transition:width .1s linear}
+
+@media(max-width:980px){
+.s{padding:80px 0}nav{display:none}
+.hero{background:linear-gradient(rgba(253,251,248,.62),rgba(253,251,248,.62)),url('hero-bg.jpg') center/cover no-repeat,var(--paper);animation:none}
+.hero .wrap,.about .wrap,.ms .wrap,.contact .wrap{grid-template-columns:1fr;gap:56px}
+.arch{max-width:380px}.arch:before{inset:16px -14px -16px 14px}
+.rows>div{grid-template-columns:1fr;gap:8px;padding:28px 0}
+.rows>div:hover{padding-left:0;padding-right:0}
+.quotes{grid-template-columns:1fr;gap:40px}
+.tabs{flex-direction:row;flex-wrap:wrap}.tab{padding:12px 16px;font-size:13.5px}.tab:hover,.tab.active{transform:none;padding-left:16px}.pane{padding:36px 28px}}
+@media(max-width:560px){.wrap{padding:0 22px}body>header .btn{display:none}.feats{grid-template-columns:1fr}.stats{gap:32px;flex-wrap:wrap}.hero{padding:56px 0 80px}.arch>div{padding:112px 30px 36px}.map{height:360px}.top .r{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important}.hero .rate,.hero h1,.hero .lead,.hero .acts,.hero .arch{opacity:1!important;animation:none!important}}
 </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Καλώς ήρθες</h1>
-        <div class="card reveal">
-            <h2>Πρώτη κάρτα</h2>
-            <p>Περιεχόμενο...</p>
-        </div>
-        <div class="card reveal">
-            <h2>Δεύτερη κάρτα</h2>
-            <p>Περιεχόμενο...</p>
-        </div>
+
+<div class="scroll-progress" id="progress"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="ph" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="mk" viewBox="0 0 24 24"><path d="M4.8 2.4A2.4 2.4 0 0 0 2.4 4.8v4.8a7.2 7.2 0 0 0 14.4 0V4.8a2.4 2.4 0 0 0-2.4-2.4"/><path d="M9.6 16.8v1.2a3.6 3.6 0 0 0 7.2 0v-2.4"/><circle cx="16.8" cy="13.2" r="2.4"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></symbol>
+</svg>
+
+<div class="top">
+  <div class="wrap">
+    <span>Παιδιατρική Υποστήριξη &amp; Επείγοντα Περιστατικά</span>
+    <div class="r">
+      <a href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Βασιλικής Ταβάκη 15, Θέρμη</a>
+      <a class="ph" href="tel:6948172766"><svg class="i"><use href="#ph"/></svg>694 817 2766</a>
     </div>
-    
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+  </div>
+</div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <span class="mark"><svg class="i"><use href="#mk"/></svg></span>
+      <span><b>Δρ. Ολυμπία Τσιαμπαρλή</b><small>Παιδίατρος — Θέρμη</small></span>
+    </a>
+    <nav>
+      <a href="#about">Φιλοσοφία</a>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#milestones">Οδηγός Ανάπτυξης</a>
+      <a href="#reviews">Αξιολογήσεις</a>
+      <a href="#contact">Επικοινωνία</a>
+    </nav>
+    <a href="tel:6948172766" class="btn"><svg class="i"><use href="#ph"/></svg>Κλήση Ιατρείου</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <a class="rate" href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener">
+        <span class="st" aria-hidden="true">★★★★★</span>
+        <span>Δείτε τις ζωντανές αξιολογήσεις στο Google Maps ↗</span>
+      </a>
+      <h1>Επιστημονική αφοσίωση,<br>ανθρώπινη ηρεμία &amp; φροντίδα.</h1>
+      <p class="lead">Ένα σύγχρονο παιδιατρικό ιατρείο στη Θέρμη σχεδιασμένο για να προσφέρει υπεύθυνη επιστημονική παρακολούθηση, ασφάλεια και απόλυτη υποστήριξη στους γονείς σε κάθε στάδιο ανάπτυξης του παιδιού.</p>
+      <div class="acts">
+        <a class="btn" href="tel:6948172766"><svg class="i"><use href="#ph"/></svg>Τηλεφωνικό Ραντεβού</a>
+        <a class="btn o" href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Οδηγίες Πρόσβασης</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div>
+        <h3>Παιδιατρικό Ιατρείο</h3>
+        <dl>
+          <div><dt>Διεύθυνση</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener">Βασιλικής Ταβάκη 15, Θέρμη 570 01</a></dd></div>
+          <div><dt>Ωράριο Λειτουργίας</dt><dd>Κατόπιν Ραντεβού (24/7 Επείγοντα)</dd></div>
+          <div><dt>Εξειδίκευση</dt><dd>Νεογνά, Βρέφη, Παιδιά &amp; Έφηβοι</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="s about mist">
+  <div class="wrap">
+    <div class="intro reveal">
+      <span class="tag">Η Ιατρική Φιλοσοφία</span>
+      <h2>Χρόνος, ακρόαση και επιστημονική συνέπεια σε κάθε εξέταση.</h2>
+      <p>Η παιδιατρική δεν είναι απλώς η διάγνωση μιας ασθένειας. Είναι η δημιουργία μιας σχέσης εμπιστοσύνης με το παιδί και την οικογένεια.</p>
+      <p>Στο ιατρείο μας στη Θέρμη, αφιερώνουμε τον απαραίτητο χρόνο ώστε κάθε παιδί να αισθάνεται ήρεμο και ασφαλές, ενώ οι γονείς λαμβάνουν σαφείς, τεκμηριωμένες απαντήσεις για κάθε τους απορία.</p>
+      <div class="stats" style="background:var(--paper)">
+        <div><b>100%</b><span>Προσωποποιημένη Φροντίδα</span></div>
+        <div><b>24/7</b><span>Τηλεφωνική Υποστήριξη</span></div>
+      </div>
+    </div>
+    <div class="feats">
+      <div class="reveal d1"><h3>Έμπειρη &amp; Ήρεμη Προσέγγιση</h3><p>Εξέταση χωρίς βιασύνη, προσαρμοσμένη στον ρυθμό και την ψυχολογία του κάθε παιδιού.</p></div>
+      <div class="reveal d2"><h3>Νεογνική Φροντίδα</h3><p>Πρώτη επίσκεψη από τις πρώτες ημέρες ζωής, υποστήριξη θηλασμού και καθοδήγηση νέων γονέων.</p></div>
+      <div class="reveal d3"><h3>Σύγχρονο Εμβολιαστικό Πλάνο</h3><p>Πλήρης εφαρμογή του Εθνικού Προγράμματος Εμβολιασμών με εξατομικευμένη παρακολούθηση.</p></div>
+      <div class="reveal d4"><h3>Άμεση Ανταπόκριση</h3><p>Συνεχής επικοινωνία με τη γιατρό για έκτακτα συμπτώματα και απορίες.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="s">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="tag">Ιατρικές Υπηρεσίες</span>
+      <h2>Ολοκληρωμένη Παιδιατρική Μέριμνα</h2>
+    </div>
+    <div class="rows">
+      <div class="reveal"><span class="tag">Πρόληψη</span><h3>Προληπτική Παιδιατρική &amp; Εμβολιασμοί</h3><p>Πλήρης προληπτικός έλεγχος, διενέργεια εμβολιασμών βάσει εθνικού προγράμματος και έκδοση ατομικών δελτίων υγείας μαθητή (ΑΔΥΜ).</p></div>
+      <div class="reveal"><span class="tag">Ανάπτυξη</span><h3>Παρακολούθηση Ανάπτυξης &amp; Αύξησης</h3><p>Σωματομετρική αξιολόγηση (βάρος, ύψος, περίμετρος κεφαλής), έλεγχος αναπτυξιακών οροσήμων και κινητικής εξέλιξης.</p></div>
+      <div class="reveal"><span class="tag">Νεογνά</span><h3>Υποστήριξη Θηλασμού &amp; Νεογνού</h3><p>Εξειδικευμένη καθοδήγηση μητρικού θηλασμού, αντιμετώπιση κολικών, φροντίδα ομφαλού και διατροφικές οδηγίες απογαλακτισμού.</p></div>
+      <div class="reveal"><span class="tag">Διάγνωση</span><h3>Διάγνωση &amp; Θεραπεία Λοιμώξεων</h3><p>Αντιμετώπιση οξέων παιδιατρικών περιστατικών (ιώσεις, λοιμώξεις αναπνευστικού, πυρετός, γαστρεντερίτιδες, αλλεργίες).</p></div>
+      <div class="reveal"><span class="tag">Επείγοντα</span><h3>24/7 Τηλεφωνική Κάλυψη</h3><p>Δυνατότητα άμεσης επικοινωνίας με τη γιατρό για έκτακτα συμπτώματα, αξιολόγηση σοβαρότητας και οδηγίες πρώτων βοηθειών.</p></div>
+      <div class="reveal"><span class="tag">Επισκέψεις</span><h3>Κατ' Οίκον Επισκέψεις</h3><p>Δυνατότητα κατ' οίκον εξέτασης νεογνών ή εκτάκτων περιστατικών κατόπιν συνεννόησης στην περιοχή της Θέρμης και γύρω περιοχών.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="milestones" class="s ms mist">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="head">
+        <span class="tag">Χρήσιμος Οδηγός</span>
+        <h2>Στάδια Ανάπτυξης &amp; Επισκέψεις</h2>
+        <p>Επιλέξτε την ηλικία του παιδιού σας για να δείτε τα βασικά αναπτυξιακά ορόσημα:</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true">0 — 1 Μηνών (Νεογνό)</button>
+        <button class="tab" role="tab" aria-selected="false">2 — 6 Μηνών</button>
+        <button class="tab" role="tab" aria-selected="false">12 Μηνών (1 Έτος)</button>
+        <button class="tab" role="tab" aria-selected="false">2 — 3 Ετών</button>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="pane on" role="tabpanel">
+        <h3>Πρώτος Μήνας &amp; Νεογνικός Έλεγχος</h3>
+        <ul>
+          <li>Πρώτη παιδιατρική εξέταση εντός 5-10 ημερών από τη γέννηση.</li>
+          <li>Έλεγχος σωματικού βάρους, ικτέρου και επούλωσης ομφαλού.</li>
+          <li>Αξιολόγηση θηλασμού και προγράμματος σίτισης.</li>
+          <li>Συμβουλές για τον ύπνο, την ασφάλεια και το περιβάλλον του μωρού.</li>
+        </ul>
+      </div>
+      <div class="pane" role="tabpanel">
+        <h3>2 έως 6 Μήνες — Πρώτοι Εμβολιασμοί</h3>
+        <ul>
+          <li>Έναρξη βασικού εμβολιαστικού σχήματος (2ος, 4ος, 6ος μήνας).</li>
+          <li>Παρακολούθηση αύξησης βάρους, μήκους και περιμέτρου κεφαλής.</li>
+          <li>Έλεγχος οπτικής επαφής, χαμόγελου και στηρίγματος κεφαλής.</li>
+          <li>Προετοιμασία για την εισαγωγή στερεών τροφών (στον 6ο μήνα).</li>
+        </ul>
+      </div>
+      <div class="pane" role="tabpanel">
+        <h3>12 Μήνες — Πρώτα Βήματα &amp; Λέξεις</h3>
+        <ul>
+          <li>Επαναληπτικοί εμβολιασμοί 1ου έτους.</li>
+          <li>Αξιολόγηση αυτόνομης στάσης/βάδισης και λεπτής κινητικότητας.</li>
+          <li>Έλεγχος λόγου (πρώτες λέξεις, ανταπόκριση στο όνομα).</li>
+          <li>Μετάβαση σε πλήρες οικογενειακό διαιτολόγιο.</li>
+        </ul>
+      </div>
+      <div class="pane" role="tabpanel">
+        <h3>2 έως 3 Έτη — Κοινωνικοποίηση &amp; Λόγος</h3>
+        <ul>
+          <li>Αναπτυξιακός έλεγχος λόγου, εκφοράς προτάσεων και συμπεριφοράς.</li>
+          <li>Έκδοση Ατομικού Δελτίου Υγείας (ΑΔΥΜ) για παιδικό σταθμό.</li>
+          <li>Συμβουλευτική για αγωγή τουαλέτας και όρια.</li>
+          <li>Προληπτικός έλεγχος όρασης και ακοής.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="s rev">
+  <div class="wrap">
+    <div class="top2">
+      <div class="head reveal" style="margin:0">
+        <span class="tag">Εμπειρίες Γονέων</span>
+        <h2>Αξιολογήσεις Google</h2>
+      </div>
+      <a class="btn o reveal d1" href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener"><span class="st" aria-hidden="true">★★★★★</span>Ζωντανές Κριτικές στο Google Maps ↗</a>
+    </div>
+    <div class="quotes">
+      <div class="q reveal">
+        <div><span class="st" aria-hidden="true">★★★★★</span><p>«Πήγαμε το βρεφάκι μας λίγο μικρότερο από 11 μηνών στην κα Ολυμπία λόγω σχολίων και μιας φίλης. Η γιατρός αφιέρωσε πολύ χρόνο να ακούσει το πρόβλημά μας... Εξαιρετική επιστήμονας!»</p></div>
+        <div class="w"><b>nicoleta theodosiadou</b><small>Google Review</small></div>
+      </div>
+      <div class="q reveal d1">
+        <div><span class="st" aria-hidden="true">★★★★★</span><p>«Η Ολυμπία είναι παιδίατρος μας από όταν γεννήθηκε η κόρη μου. 5 ημερών την εξέτασε πρώτη φορά. Σήμερα είναι 2.5 χρονών και μετά από τόσο καιρό έχω να πω μόνο τα καλύτερα! Υπέροχη, πάντα δίπλα μας. Έμπειρη, ήρεμη.»</p></div>
+        <div class="w"><b>Nantia Konstadina</b><small>Google Review</small></div>
+      </div>
+      <div class="q reveal d2">
+        <div><span class="st" aria-hidden="true">★★★★★</span><p>«Η παιδίατρος Ολυμπία Τσιαμπαρλή είναι εξαιρετική! Συνδυάζει άριστη επιστημονική κατάρτιση με γλυκύτητα και υπομονή, κάνοντας παιδιά και γονείς να τη συμπαθούν αμέσως. Τη συστήνω ανεπιφύλακτα!»</p></div>
+        <div class="w"><b>natasa pavlou</b><small>Τοπικός Οδηγός Google</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="s contact mist">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="tag">Επικοινωνία &amp; Τοποθεσία</span>
+      <h2>Παιδιατρικό Ιατρείο στη Θέρμη</h2>
+      <div class="info">
+        <div>
+          <span class="ic"><svg class="i"><use href="#pin"/></svg></span>
+          <div>
+            <h4>Διεύθυνση Ιατρείου</h4>
+            <a href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener">Τσιαμπαρλή Ολυμπία - Παιδίατρος<br>Βασιλικής Ταβάκη 15, Θέρμη 570 01</a>
+            <small>Plus Code: G2V9+RJ Θέρμη</small>
+          </div>
+        </div>
+        <div>
+          <span class="ic"><svg class="i"><use href="#ph"/></svg></span>
+          <div>
+            <h4>Τηλέφωνο Επικοινωνίας</h4>
+            <a class="n" href="tel:6948172766">694 817 2766</a>
+            <p>Άμεση τηλεφωνική εξυπηρέτηση &amp; επείγοντα</p>
+          </div>
+        </div>
+        <div>
+          <span class="ic"><svg class="i"><use href="#cal"/></svg></span>
+          <div>
+            <h4>Προγραμματισμός Επίσκεψης</h4>
+            <p>Δεχόμαστε κατόπιν τηλεφωνικού ραντεβού για την αποφυγή συνωστισμού και αναμονής.</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Τσιαμπαρλή+Ολυμπία+-+Παιδίατρος+Βασιλικής+Ταβάκη+15+Θέρμη" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Άνοιγμα στο Google Maps (Πλοήγηση)</a>
+    </div>
+    <div class="map reveal d1">
+      <iframe title="Χάρτης Ιατρείου Τσιαμπαρλή Ολυμπία" src="https://maps.google.com/maps?q=Τσιαμπαρλή%20Ολυμπία%20-%20Παιδίατρος,%20Βασιλικής%20Ταβάκη%2015,%20Θέρμη&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b>Δρ. Ολυμπία Τσιαμπαρλή — Παιδίατρος</b>
+      <p>Βασιλικής Ταβάκη 15, Θέρμη 570 01 | Τηλ: 694 817 2766</p>
+    </div>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Δρ. Ολυμπία Τσιαμπαρλή. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* Tabs */
+const tabs=document.querySelectorAll('.tab'),panes=document.querySelectorAll('.pane');
+tabs.forEach((b,i)=>b.addEventListener('click',()=>{
+  tabs.forEach((t,j)=>{t.classList.toggle('active',i===j);t.setAttribute('aria-selected',i===j)});
+  panes.forEach((p,j)=>p.classList.toggle('on',i===j));
+}));
+
+/* Scroll reveal */
+const revealEls=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+revealEls.forEach(el=>io.observe(el));
+
+/* Header shadow + progress bar */
+const header=document.getElementById('siteHeader');
+const progress=document.getElementById('progress');
+function onScroll(){
+  const y=window.scrollY;
+  header.classList.toggle('scrolled',y>10);
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  progress.style.width=(h>0?(y/h)*100:0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+</script>
 </body>
 </html>
